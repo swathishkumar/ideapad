@@ -1,19 +1,23 @@
-//import 'package:essay/view/Homepage/homepage.dart';
-import 'package:essay/view/splashscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:note_app/view/splash_screen/splash_screen.dart';
 
-void main() {
-  runApp(Ideapad());
+Future<void> main(List<String> args) async {
+  await Hive.initFlutter();
+  //step 3
+  var box = await Hive.openBox('notebox');
+
+  runApp(MyApp());
 }
 
-class Ideapad extends StatelessWidget {
-  const Ideapad({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splashscreen(),
+      home: SplashScreen(),
     );
   }
 }

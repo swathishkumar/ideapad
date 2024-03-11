@@ -3,7 +3,11 @@
 import 'package:flutter/material.dart';
 
 class CustomNotes extends StatelessWidget {
-  const CustomNotes({super.key});
+  const CustomNotes({super.key, required this.title, required this.des, required this.date, required this.notecolor});
+  final String title;
+  final String des;
+  final String date;
+  final Color notecolor;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class CustomNotes extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Subject",
+                    title,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                   ),
                   Spacer(),
@@ -34,12 +38,12 @@ class CustomNotes extends StatelessWidget {
                   Icon(Icons.delete)
                 ],
               ),
-              Text("Description"),
+              Text(des),
               Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text("Date"),
+                  Text(date),
                   SizedBox(
                     width: 10,
                   ),

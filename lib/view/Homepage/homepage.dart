@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
-import 'package:essay/utils/colordb.dart';
-import 'package:essay/view/Homepage/widgets/bottomsheet.dart';
-import 'package:essay/view/Homepage/widgets/customnotes.dart';
 import 'package:flutter/material.dart';
+import 'package:note_app/utils/colordb.dart';
+import 'package:note_app/view/Homepage/widgets/bottomsheet.dart';
+import 'package:note_app/view/Homepage/widgets/customnotes.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -34,7 +34,8 @@ class _HomescreenState extends State<Homescreen> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListView.separated(
-              itemBuilder: (context, index) => CustomNotes(),
+              itemBuilder: (context, index) => CustomNotes(
+                  title: '', des: '', date: '', notecolor: Colors.white),
               separatorBuilder: (context, index) => SizedBox(
                     height: 10,
                   ),
